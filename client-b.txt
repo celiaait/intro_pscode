@@ -1,4 +1,71 @@
 # Client Task B #
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
+START
+
+// Step 1: Initialize the warehouse layout
+SET warehouse_width = 10 // Width of the warehouse (x-coordinate)
+SET warehouse_height = 10 // Height of the warehouse (y-coordinate)
+SET customer_position = (0, 0) // Starting position (x, y)
+SET target_location = (5, 7) // The target location to find
+
+// Step 2: Display instructions
+OUTPUT "Welcome to the Warehouse Navigation App!"
+OUTPUT "You can move: north (N), south (S), east (E), or west (W)."
+OUTPUT "Type 'quit' to exit the application."
+
+// Step 3: Game loop
+WHILE customer_position NOT EQUALS target_location DO
+    // Step 4: Get user input
+    OUTPUT "Your current position is: " + customer_position
+    OUTPUT "Enter your move (N/S/E/W):"
+    INPUT user_move
+
+    // Step 5: Process user input
+    IF user_move EQUALS 'N' THEN
+        // Move north
+        IF customer_position.y < warehouse_height - 1 THEN
+            SET customer_position.y = customer_position.y + 1
+        ELSE
+            OUTPUT "You can't move further north!"
+        END IF
+
+    ELSE IF user_move EQUALS 'S' THEN
+        // Move south
+        IF customer_position.y > 0 THEN
+            SET customer_position.y = customer_position.y - 1
+        ELSE
+            OUTPUT "You can't move further south!"
+        END IF
+
+    ELSE IF user_move EQUALS 'E' THEN
+        // Move east
+        IF customer_position.x < warehouse_width - 1 THEN
+            SET customer_position.x = customer_position.x + 1
+        ELSE
+            OUTPUT "You can't move further east!"
+        END IF
+
+    ELSE IF user_move EQUALS 'W' THEN
+        // Move west
+        IF customer_position.x > 0 THEN
+            SET customer_position.x = customer_position.x - 1
+        ELSE
+            OUTPUT "You can't move further west!"
+        END IF
+
+    ELSE IF user_move EQUALS 'quit' THEN
+        OUTPUT "Thank you for using the Warehouse Navigation App!"
+        EXIT
+
+    ELSE
+        OUTPUT "Invalid move. Please enter N, S, E, or W."
+
+END WHILE
+
+// Step 6: Reached target location
+OUTPUT "Congratulations! You've found the target location at: " + target_location
+
+END
+
 

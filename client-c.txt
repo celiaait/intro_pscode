@@ -1,4 +1,23 @@
 # Client Task C #
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
+START
+
+// Step 1: Initialize the counting variable
+SET package_count = 2 // Start counting from 2
+
+// Step 2: Print header
+OUTPUT "Product Package Counter"
+
+// Step 3: Loop to count from 2 to 50, counting by twos
+WHILE package_count <= 50 DO
+    OUTPUT package_count // Print the current count
+    SET package_count = package_count + 2 // Increment by 2
+
+END WHILE
+
+// Step 4: End of program
+OUTPUT "Counting complete!"
+
+END
 

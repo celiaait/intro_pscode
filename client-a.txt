@@ -2,3 +2,34 @@
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
 
+START
+
+// Step 1: Initialize the game
+SET random_number = RANDOM(1, 10) // Computer chooses a random number between 1 and 10
+SET attempts = 3 // Number of attempts allowed
+SET guessed_correctly = FALSE // Flag to track if the guess is correct
+
+// Step 2: Game loop
+WHILE attempts > 0 AND guessed_correctly IS FALSE DO
+    // Step 3: Get user input
+    OUTPUT "Guess a number between 1 and 10:"
+    INPUT user_guess
+
+    // Step 4: Check the guess
+    IF user_guess EQUALS random_number THEN
+        OUTPUT "Congratulations! You've guessed the number!"
+        SET guessed_correctly = TRUE
+    ELSE
+        // Decrease the number of attempts
+        SET attempts = attempts - 1
+        IF attempts > 0 THEN
+            OUTPUT "Incorrect. You have " + attempts + " attempts left."
+        ELSE
+            OUTPUT "Sorry! You've run out of attempts. The number was " + random_number + "."
+
+END WHILE
+
+// Step 5: End of game
+OUTPUT "Thank you for playing!"
+
+END
